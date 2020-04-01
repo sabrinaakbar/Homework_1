@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FE Home work_1</title>
+</head>
+<body>
+    <h1 align="center">Shopping Cart</h1>
+    <h2 align="center">Submitted by Sabrina Akbar</h2>
+
+<form id="myForm">
+
+<table border = "1">
+<tr>
+	<th width="250">Item</th>
+	<th width="250">Quantity</th>
+	<th width="250">Unit Price</th>
+	<th width="250">Total Price</th>
+</tr>
+<tr>
+	<td>Item-1: <input id="item-1" type = "text"/></td>
+	<td><input id="firstItemQuantity" type="number"/></td>
+	<td><input id="firstItemUnitPrice" type="number"/></td>
+	<td id="firstItemTotal"></td>
+</tr>
+<tr>
+		<td>Item-2: <input id="item-2" type = "text"/></td>
+	<td><input id="secondItemQuantity" type="number"/></td>
+	<td><input id="secondItemUnitPrice" type="number"/></td>
+	<td id="secondItemTotal"></td>
+</tr>
+<tr>
+	<td colspan="3">Grand Total</td>
+	
+	<td id="grandTotal"></td>
+</tr>
+</table>
+</form>
+<input align="center" type = "button" value="calculate" onclick="calculate()"/>
+<br/>
+<input align="center" type = "button" value="clear" onclick="clear()"/>
+
+<script>
+	
+	function calculate(){
+		var firstItemQuantity = document.getElementById('firstItemQuantity').value;
+		var firstItemUnitPrice = document.getElementById('firstItemUnitPrice').value;
+		var firstItemTotal = parseInt(firstItemQuantity)*parseInt(firstItemUnitPrice);
+		document.getElementById('firstItemTotal').innerHTML = firstItemTotal;
+
+		var secondItemQuantity = document.getElementById('secondItemQuantity').value;
+		var secondItemUnitPrice = document.getElementById('secondItemUnitPrice').value;
+		var secondItemTotal = parseInt(secondItemQuantity)*parseInt(secondItemUnitPrice);
+		document.getElementById('secondItemTotal').innerHTML = secondItemTotal;
+
+			var grandTotal = parseInt(firstItemTotal)+parseInt(secondItemTotal);
+			document.getElementById('grandTotal').innerHTML = grandTotal;
+			
+		}
+		function clear() {
+			document.getElementById("myForm").clear();
+			document.getElementById('firstItemTotal').innerHTML = null;
+			document.getElementById('secondItemTotal').innerHTML = null;
+			document.getElementById('grandTotal').innerHTML = null;
+		
+		}
+
+	
+</script>
+
+</body>
+</html>
